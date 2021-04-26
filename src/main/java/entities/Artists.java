@@ -8,9 +8,21 @@ import javax.persistence.Id;
 public class Artists {
     private @Id
     @GeneratedValue
-    Integer artistId;
+    Long artistId;
     private String name;
     private String instrumentation;
+
+    public Artists() {
+    }
+
+    public Artists(String name, String instrumentation) {
+        this.name = name;
+        this.instrumentation = instrumentation;
+    }
+
+    public Long getArtistId() {
+        return artistId;
+    }
 
     public String getName() {
         return name;

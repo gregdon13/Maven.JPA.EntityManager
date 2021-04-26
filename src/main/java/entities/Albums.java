@@ -6,11 +6,24 @@ import javax.persistence.Id;
 
 @Entity
 public class Albums {
-    private @Id @GeneratedValue Integer albumId;
+    private @Id @GeneratedValue Long albumId;
     private String title;
     private Integer year;
     private Integer artistId;
     private String genre;
+
+    public Albums() {}
+
+    public Albums(String title, Integer year, Integer artistId, String genre) {
+        this.title = title;
+        this.year = year;
+        this.artistId = artistId;
+        this.genre = genre;
+    }
+
+    public Long getAlbumId() {
+        return albumId;
+    }
 
     public String getTitle() {
         return title;
