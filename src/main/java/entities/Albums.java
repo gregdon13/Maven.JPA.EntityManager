@@ -1,20 +1,19 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Albums {
     private @Id @GeneratedValue Long albumId;
     private String title;
     private Integer year;
-    private Integer artistId;
+    private Long artistId;
     private String genre;
 
     public Albums() {}
 
-    public Albums(String title, Integer year, Integer artistId, String genre) {
+    public Albums(String title, Integer year, Long artistId, String genre) {
         this.title = title;
         this.year = year;
         this.artistId = artistId;
@@ -41,11 +40,11 @@ public class Albums {
         this.year = year;
     }
 
-    public Integer getArtistId() {
+    public Long getArtistId() {
         return artistId;
     }
 
-    public void setArtistId(Integer artistId) {
+    public void setArtistId(Long artistId) {
         this.artistId = artistId;
     }
 
